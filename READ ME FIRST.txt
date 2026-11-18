@@ -1,0 +1,77 @@
+Flowduino 1.0
+=============
+
+Visual block editor for Arduino sketches, for macOS.
+
+Drag Flowduino.app to your Applications folder, then read "Opening it the
+first time" below — macOS will refuse to open it otherwise.
+
+
+Requirements
+------------
+
+  * macOS 14 (Sonoma) or later
+  * Apple Silicon or Intel — the app is a universal binary
+
+
+Opening it the first time
+-------------------------
+
+This app is not signed with a paid Apple Developer certificate, so macOS will
+say it "cannot be opened because Apple cannot check it for malicious software".
+That message is about the absent certificate, not about anything found in the
+app. To open it anyway:
+
+  1. Double-click Flowduino.app. Dismiss the warning.
+  2. Open System Settings > Privacy & Security, scroll to the Security section.
+  3. Next to "Flowduino was blocked", click "Open Anyway", then confirm.
+
+You only have to do this once.
+
+If that option does not appear, open Terminal and run this, then try again:
+
+    xattr -dr com.apple.quarantine /Applications/Flowduino.app
+
+
+What works without anything else installed
+------------------------------------------
+
+Everything to do with building a sketch: place and wire blocks, edit values,
+watch the generated C++ update live in the code panel, and save and open
+.flowduino files. You can also import an existing .ino sketch and have it
+converted into blocks.
+
+Compiling and uploading to a board are the exceptions. They need the Arduino
+CLI, which is deliberately NOT bundled here — the app will offer to walk you
+through installing it the first time you press Compile or Upload. Until then
+those two buttons are the only things that will not work.
+
+
+Getting started
+---------------
+
+A new document opens with just setup() and loop(). Blocks live in the sidebar
+on the left, grouped by category — click a category to open it, or type in the
+search box to find a block by name. Drag a block onto the canvas, then wire the
+chevrons on the top and bottom edges to set the order things happen in, and the
+circles on the left and right edges to pass values around.
+
+Double-click any block to open its settings.
+
+
+Keeping a canvas readable
+-------------------------
+
+  * Route a wire that runs behind a block: double-click the wire to drop a
+    point on it, then drag that point out of the way. Double-click a point to
+    remove it, or right-click it for "Straighten Wire".
+
+  * Tidy Layout (Option-Command-T) rebuilds the whole arrangement from the
+    wiring: control flow down the page, nested bodies stepped to the right,
+    and the expressions feeding a block to its left.
+
+  * Align to Grid (Option-Command-G) leaves your arrangement alone and only
+    squares it up — the selected blocks, or everything if nothing is selected.
+
+Both are on the toolbar, in the Canvas menu, and on the canvas right-click
+menu. Everything is undoable with Command-Z.
