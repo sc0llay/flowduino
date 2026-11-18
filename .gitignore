@@ -1,0 +1,2 @@
+# Builds are published as release assets, never committed.
+*.zip

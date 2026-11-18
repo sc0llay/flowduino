@@ -10,14 +10,17 @@ source code here.
 
 ## Download
 
-**[Flowduino-1.0-macOS.zip](../../raw/main/Flowduino-1.0-macOS.zip)** — 4.1 MB,
-universal binary (Apple Silicon and Intel), macOS 14 Sonoma or later.
+### [▸ Download the latest release](../../releases/latest)
+
+Universal binary (Apple Silicon and Intel), macOS 14 Sonoma or later, about
+4 MB. Every build is published on the [releases page](../../releases); the
+repository itself holds only the notes you are reading.
 
 Unzip it, drag `Flowduino.app` to your Applications folder, and read
 [READ ME FIRST.txt](READ%20ME%20FIRST.txt) — in particular the note on opening
-it the first time, because the app is not yet signed with a paid Apple
-Developer certificate and macOS will refuse to launch it until you approve it
-once in System Settings ▸ Privacy & Security.
+it the first time, because the app is not yet notarized by Apple and macOS
+will refuse to launch it until you approve it once in System Settings ▸
+Privacy & Security.
 
 ## How it works
 
@@ -72,6 +75,6 @@ to walk you through installing it. No Homebrew required.
 
 ## Status
 
-Flowduino is not notarized yet; that follows an Apple Developer account. Until
-then macOS treats it as an unidentified developer and you approve it once by
-hand, as described in `READ ME FIRST.txt`.
+Flowduino is not notarized by Apple yet. Until it is, macOS treats it as coming
+from an unidentified developer, and you approve it once by hand as described in
+`READ ME FIRST.txt`. That approval step disappears in a later release.
